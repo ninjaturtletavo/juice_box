@@ -26,6 +26,14 @@ server.use("/api", (req, res, next) => {
   next();
 });
 
+server.get("/background/:color", (req, res, next) => {
+  res.send(`
+    <body style="background: ${req.params.color};">
+      <h1>Hello World</h1>
+    </body>
+  `);
+});
+
 // server.get("/api", (req, res, next) => {
 //   console.log("A GET request was made to /api");
 //   res.send({ message: "SUCCESS" });
